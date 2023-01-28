@@ -3,7 +3,7 @@ using static System.String;
 
 public static class Infrastructure
 {
-    public static int[] CreateArray(int size, int min = 0, int max = 30)
+    public static int[] CreateArray(this int size, int min = 0, int max = 30)
     {
         int[] array = new int[size];
         for (int i = 0; i < size; i++)
@@ -12,9 +12,10 @@ public static class Infrastructure
         }
         return array;
     }
-    public static void Print(int[] array)
-{
-    WriteLine($"[{Join(',', array)}]");
-}
+    public static int[] Print(this int[] array)
+    {
+        WriteLine($"[{Join(',', array)}]");
+        return array;
+    }
 }
 
